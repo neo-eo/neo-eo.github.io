@@ -7,7 +7,84 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>xxx</copyright>
-        <lastBuildDate>Wed, 31 Dec 2025 11:29:58 +0800</lastBuildDate><atom:link href="https://neo-eo.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Jan 2026 18:06:41 +0800</lastBuildDate><atom:link href="https://neo-eo.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>安全设备基础知识</title>
+        <link>https://neo-eo.github.io/p/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+        <pubDate>Wed, 07 Jan 2026 18:06:41 +0800</pubDate>
+        
+        <guid>https://neo-eo.github.io/p/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+        <description>&lt;h1 id=&#34;防火墙-firewall&#34;&gt;防火墙 (Firewall)
+&lt;/h1&gt;&lt;p&gt;简单难度&lt;/p&gt;
+&lt;h2 id=&#34;什么是防火墙&#34;&gt;什么是防火墙？
+&lt;/h2&gt;&lt;p&gt;防火墙是部署在网络边界的安全设备（硬件或软件），用于监控和控制进出网络的流量，基于预设规则允许或阻止数据包。&lt;/p&gt;
+&lt;h2 id=&#34;防火墙的主要作用是什么&#34;&gt;防火墙的主要作用是什么？
+&lt;/h2&gt;&lt;p&gt;主要作用是隔离不同信任级别的网络（如内网和外网），防止未授权访问，阻挡恶意流量，保护内部网络资源。&lt;/p&gt;
+&lt;h2 id=&#34;防火墙通常部署在哪里&#34;&gt;防火墙通常部署在哪里？
+&lt;/h2&gt;&lt;p&gt;通常部署在内网与互联网之间、不同安全级别的内网区域之间（如DMZ区）、或关键服务器前端。&lt;/p&gt;
+&lt;h2 id=&#34;防火墙的基本技术有哪些&#34;&gt;防火墙的基本技术有哪些？
+&lt;/h2&gt;&lt;p&gt;包过滤（静态/动态）、状态检测（连接跟踪）、应用层代理（深度包检测）。&lt;/p&gt;
+&lt;h2 id=&#34;包过滤防火墙检查什么信息&#34;&gt;包过滤防火墙检查什么信息？
+&lt;/h2&gt;&lt;p&gt;检查数据包的源/目标IP地址、端口号、协议类型（TCP/UDP/ICMP）等网络层和传输层信息。&lt;/p&gt;
+&lt;p&gt;中等难度&lt;/p&gt;
+&lt;h2 id=&#34;状态检测防火墙相比包过滤有何优势&#34;&gt;状态检测防火墙相比包过滤有何优势？
+&lt;/h2&gt;&lt;p&gt;状态检测能跟踪连接状态（如TCP三次握手），理解会话上下文，从而更智能地允许或拒绝流量，防御伪装攻击。&lt;/p&gt;
+&lt;h2 id=&#34;什么是下一代防火墙ngfw&#34;&gt;什么是下一代防火墙（NGFW）？
+&lt;/h2&gt;&lt;p&gt;NGFW在传统防火墙基础上集成了应用识别与控制、入侵防御（IPS）、用户身份管理、威胁情报等高级功能，提供更精细的防护。&lt;/p&gt;
+&lt;h2 id=&#34;什么是防火墙的默认拒绝策略&#34;&gt;什么是防火墙的“默认拒绝”策略？
+&lt;/h2&gt;&lt;p&gt;指防火墙默认阻止所有未明确允许的流量，遵循最小权限原则，是更安全的配置策略。&lt;/p&gt;
+&lt;h2 id=&#34;防火墙如何处理nat网络地址转换&#34;&gt;防火墙如何处理NAT（网络地址转换）？
+&lt;/h2&gt;&lt;p&gt;防火墙常集成NAT功能，将内部私有IP转换为公网IP对外通信，同时隐藏内网结构，节省公网地址。&lt;/p&gt;
+&lt;h2 id=&#34;如何验证防火墙规则的有效性&#34;&gt;如何验证防火墙规则的有效性？
+&lt;/h2&gt;&lt;p&gt;通过规则日志分析、漏洞扫描、渗透测试、模拟攻击流量等方式，定期审计规则集是否达到预期效果。&lt;/p&gt;
+&lt;h1 id=&#34;上网行为管理&#34;&gt;上网行为管理
+&lt;/h1&gt;&lt;p&gt;简单难度&lt;/p&gt;
+&lt;h2 id=&#34;什么是上网行为管理&#34;&gt;什么是上网行为管理？
+&lt;/h2&gt;&lt;p&gt;指通过技术手段监控、记录、控制和审计组织内部人员的网络使用行为，以提升工作效率、保障安全和合规。&lt;/p&gt;
+&lt;h2 id=&#34;上网行为管理的主要目的&#34;&gt;上网行为管理的主要目的？
+&lt;/h2&gt;&lt;p&gt;防止机密泄露、限制无关网络访问（如游戏、视频）、优化带宽使用、满足法律法规审计要求。&lt;/p&gt;
+&lt;h2 id=&#34;常见管理内容有哪些&#34;&gt;常见管理内容有哪些？
+&lt;/h2&gt;&lt;p&gt;网站访问过滤、应用控制（如禁止P2P）、带宽分配、内容审计（邮件/即时通讯）、行为日志记录。&lt;/p&gt;
+&lt;h2 id=&#34;上网行为管理设备通常部署在哪里&#34;&gt;上网行为管理设备通常部署在哪里？
+&lt;/h2&gt;&lt;p&gt;部署在内网出口位置，串联在防火墙与核心交换机之间，以监控所有用户上网流量。&lt;/p&gt;
+&lt;h2 id=&#34;黑白名单是什么&#34;&gt;“黑白名单”是什么？
+&lt;/h2&gt;&lt;p&gt;白名单是只允许访问的网站/应用列表；黑名单是禁止访问的列表，是基础的访问控制策略。&lt;/p&gt;
+&lt;p&gt;中等难度&lt;/p&gt;
+&lt;h2 id=&#34;如何基于用户身份实施策略&#34;&gt;如何基于用户身份实施策略？
+&lt;/h2&gt;&lt;p&gt;通过对接认证系统（如AD/LDAP），将IP或MAC地址与用户身份绑定，实现基于用户/组的差异化控制。&lt;/p&gt;
+&lt;h2 id=&#34;流量识别技术有哪些&#34;&gt;流量识别技术有哪些？
+&lt;/h2&gt;&lt;p&gt;包括端口识别、深度包检测（DPI）、行为特征分析、SSL解密等，以准确识别加密或伪装的应用。&lt;/p&gt;
+&lt;h2 id=&#34;如何实现带宽管理&#34;&gt;如何实现带宽管理？
+&lt;/h2&gt;&lt;p&gt;通过QoS（服务质量）技术，设置优先级、保证带宽、限制最大带宽、分时段控制等，确保关键业务流畅。&lt;/p&gt;
+&lt;h2 id=&#34;行为审计的法律合规要点&#34;&gt;行为审计的法律合规要点？
+&lt;/h2&gt;&lt;p&gt;在实施前需明确告知员工并获得同意（如签署协议），日志需安全存储并保护隐私，仅用于安全与合规目的。&lt;/p&gt;
+&lt;h2 id=&#34;如何应对加密流量如https的管理&#34;&gt;如何应对加密流量（如HTTPS）的管理？
+&lt;/h2&gt;&lt;p&gt;采用SSL中间人解密技术，将流量解密后进行检查再重新加密，但需在终端安装受信根证书并注意隐私法律限制。&lt;/p&gt;
+&lt;h1 id=&#34;vpn-虚拟专用网&#34;&gt;VPN (虚拟专用网)
+&lt;/h1&gt;&lt;p&gt;简单难度&lt;/p&gt;
+&lt;h2 id=&#34;什么是vpn&#34;&gt;什么是VPN？
+&lt;/h2&gt;&lt;p&gt;VPN是通过加密隧道技术在公共网络（如互联网）上构建的逻辑专用网络，实现远程安全访问内网资源。&lt;/p&gt;
+&lt;h2 id=&#34;vpn的主要作用&#34;&gt;VPN的主要作用？
+&lt;/h2&gt;&lt;p&gt;保证远程通信的机密性与完整性，让远程用户/分支机构像直接连接内网一样安全访问资源。&lt;/p&gt;
+&lt;h2 id=&#34;vpn常见类型有哪些&#34;&gt;VPN常见类型有哪些？
+&lt;/h2&gt;&lt;p&gt;远程访问VPN（如员工接入）、站点到站点VPN（如分支机构互联）。&lt;/p&gt;
+&lt;h2 id=&#34;vpn常用的加密协议有哪些&#34;&gt;VPN常用的加密协议有哪些？
+&lt;/h2&gt;&lt;p&gt;IPsec、SSL/TLS（如OpenVPN）、WireGuard等。&lt;/p&gt;
+&lt;h2 id=&#34;什么是vpn隧道&#34;&gt;什么是VPN隧道？
+&lt;/h2&gt;&lt;p&gt;指通过封装和加密技术，在公共网络上建立的虚拟点对点安全数据传输通道。&lt;/p&gt;
+&lt;p&gt;中等难度&lt;/p&gt;
+&lt;h2 id=&#34;ipsec-vpn工作模式有何区别&#34;&gt;IPsec VPN工作模式有何区别？
+&lt;/h2&gt;&lt;p&gt;传输模式只加密有效载荷，用于端到端安全；隧道模式加密整个IP包并添加新IP头，常用于网关间互联。&lt;/p&gt;
+&lt;h2 id=&#34;ssl-vpn相比ipsec-vpn有何特点&#34;&gt;SSL VPN相比IPsec VPN有何特点？
+&lt;/h2&gt;&lt;p&gt;SSL VPN基于标准HTTPS端口（443），无需专用客户端（可浏览器访问），更易穿越防火墙，适合远程用户灵活接入。&lt;/p&gt;
+&lt;h2 id=&#34;什么是零信任模型下的vpn演进&#34;&gt;什么是“零信任”模型下的VPN演进？
+&lt;/h2&gt;&lt;p&gt;零信任强调持续验证、最小权限，VPN正与SDP（软件定义边界）、身份感知等结合，实现更细粒度的动态访问控制。&lt;/p&gt;
+&lt;h2 id=&#34;如何选择vpn部署模式云硬件软件&#34;&gt;如何选择VPN部署模式（云/硬件/软件）？
+&lt;/h2&gt;&lt;p&gt;硬件VPN性能高适合大型站点；软件VPN灵活适合移动用户；云VPN服务易扩展但需评估供应商安全性与合规性。&lt;/p&gt;
+&lt;h2 id=&#34;vpn面临的常见攻击及防护措施&#34;&gt;VPN面临的常见攻击及防护措施？
+&lt;/h2&gt;&lt;p&gt;包括中间人攻击（通过强认证与证书防护）、协议漏洞（及时更新补丁）、暴力破解（使用多因素认证）、日志泄露（加强日志保护）等。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>永恒之蓝复现</title>
         <link>https://neo-eo.github.io/p/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0/</link>
         <pubDate>Wed, 31 Dec 2025 11:29:58 +0800</pubDate>

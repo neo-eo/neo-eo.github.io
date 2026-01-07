@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hello World ">
-<title>MyFirstBlog</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="防火墙 (Firewall) 简单难度\n什么是防火墙？ 防火墙是部署在网络边界的安全设备（硬件或软件），用于监控和控制进出网络的流量，基于预设规则允许或阻止数据包。\n防火墙的主要作用是什么？ 主要作用是隔离不同信任级别的网络（如内网和外网），防止未授权访问，阻挡恶意流量，保护内部网络资源。\n">
+<title>安全设备基础知识</title>
 
-<link rel='canonical' href='https://neo-eo.github.io/p/myfirstblog/'>
+<link rel='canonical' href='https://neo-eo.github.io/p/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="MyFirstBlog">
-<meta property='og:description' content="Hello World ">
-<meta property='og:url' content='https://neo-eo.github.io/p/myfirstblog/'>
+<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="安全设备基础知识">
+<meta property='og:description' content="防火墙 (Firewall) 简单难度\n什么是防火墙？ 防火墙是部署在网络边界的安全设备（硬件或软件），用于监控和控制进出网络的流量，基于预设规则允许或阻止数据包。\n防火墙的主要作用是什么？ 主要作用是隔离不同信任级别的网络（如内网和外网），防止未授权访问，阻挡恶意流量，保护内部网络资源。\n">
+<meta property='og:url' content='https://neo-eo.github.io/p/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>
 <meta property='og:site_name' content='12th'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-24T16:36:27&#43;08:00'/><meta property='article:modified_time' content='2025-12-24T16:36:27&#43;08:00'/>
-<meta name="twitter:title" content="MyFirstBlog">
-<meta name="twitter:description" content="Hello World ">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-01-07T18:06:41&#43;08:00'/><meta property='article:modified_time' content='2026-01-07T18:06:41&#43;08:00'/>
+<meta name="twitter:title" content="安全设备基础知识">
+<meta name="twitter:description" content="防火墙 (Firewall) 简单难度\n什么是防火墙？ 防火墙是部署在网络边界的安全设备（硬件或软件），用于监控和控制进出网络的流量，基于预设规则允许或阻止数据包。\n防火墙的主要作用是什么？ 主要作用是隔离不同信任级别的网络（如内网和外网），防止未授权访问，阻挡恶意流量，保护内部网络资源。\n">
     </head>
     <body class="
     article-page
@@ -300,11 +300,42 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#hello-world">Hello World</a></li>
-      </ol>
-    </li>
+    <li><a href="#什么是防火墙">什么是防火墙？</a></li>
+    <li><a href="#防火墙的主要作用是什么">防火墙的主要作用是什么？</a></li>
+    <li><a href="#防火墙通常部署在哪里">防火墙通常部署在哪里？</a></li>
+    <li><a href="#防火墙的基本技术有哪些">防火墙的基本技术有哪些？</a></li>
+    <li><a href="#包过滤防火墙检查什么信息">包过滤防火墙检查什么信息？</a></li>
+    <li><a href="#状态检测防火墙相比包过滤有何优势">状态检测防火墙相比包过滤有何优势？</a></li>
+    <li><a href="#什么是下一代防火墙ngfw">什么是下一代防火墙（NGFW）？</a></li>
+    <li><a href="#什么是防火墙的默认拒绝策略">什么是防火墙的“默认拒绝”策略？</a></li>
+    <li><a href="#防火墙如何处理nat网络地址转换">防火墙如何处理NAT（网络地址转换）？</a></li>
+    <li><a href="#如何验证防火墙规则的有效性">如何验证防火墙规则的有效性？</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#什么是上网行为管理">什么是上网行为管理？</a></li>
+    <li><a href="#上网行为管理的主要目的">上网行为管理的主要目的？</a></li>
+    <li><a href="#常见管理内容有哪些">常见管理内容有哪些？</a></li>
+    <li><a href="#上网行为管理设备通常部署在哪里">上网行为管理设备通常部署在哪里？</a></li>
+    <li><a href="#黑白名单是什么">“黑白名单”是什么？</a></li>
+    <li><a href="#如何基于用户身份实施策略">如何基于用户身份实施策略？</a></li>
+    <li><a href="#流量识别技术有哪些">流量识别技术有哪些？</a></li>
+    <li><a href="#如何实现带宽管理">如何实现带宽管理？</a></li>
+    <li><a href="#行为审计的法律合规要点">行为审计的法律合规要点？</a></li>
+    <li><a href="#如何应对加密流量如https的管理">如何应对加密流量（如HTTPS）的管理？</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#什么是vpn">什么是VPN？</a></li>
+    <li><a href="#vpn的主要作用">VPN的主要作用？</a></li>
+    <li><a href="#vpn常见类型有哪些">VPN常见类型有哪些？</a></li>
+    <li><a href="#vpn常用的加密协议有哪些">VPN常用的加密协议有哪些？</a></li>
+    <li><a href="#什么是vpn隧道">什么是VPN隧道？</a></li>
+    <li><a href="#ipsec-vpn工作模式有何区别">IPsec VPN工作模式有何区别？</a></li>
+    <li><a href="#ssl-vpn相比ipsec-vpn有何特点">SSL VPN相比IPsec VPN有何特点？</a></li>
+    <li><a href="#什么是零信任模型下的vpn演进">什么是“零信任”模型下的VPN演进？</a></li>
+    <li><a href="#如何选择vpn部署模式云硬件软件">如何选择VPN部署模式（云/硬件/软件）？</a></li>
+    <li><a href="#vpn面临的常见攻击及防护措施">VPN面临的常见攻击及防护措施？</a></li>
   </ol>
 </nav>
         </div>
@@ -324,7 +355,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/myfirstblog/">MyFirstBlog</a>
+            <a href="/p/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">安全设备基础知识</a>
         </h2>
     
         
@@ -346,7 +377,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2025-12-24T16:36:27&#43;08:00'>2025-12-24</time>
+                <time class="article-time--published" datetime='2026-01-07T18:06:41&#43;08:00'>2026-01-07</time>
             </div>
         
 
@@ -361,7 +392,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -376,8 +407,76 @@
     <section class="article-content">
     
     
-    <h3 id="hello-world">Hello World
-</h3>
+    <h1 id="防火墙-firewall">防火墙 (Firewall)
+</h1><p>简单难度</p>
+<h2 id="什么是防火墙">什么是防火墙？
+</h2><p>防火墙是部署在网络边界的安全设备（硬件或软件），用于监控和控制进出网络的流量，基于预设规则允许或阻止数据包。</p>
+<h2 id="防火墙的主要作用是什么">防火墙的主要作用是什么？
+</h2><p>主要作用是隔离不同信任级别的网络（如内网和外网），防止未授权访问，阻挡恶意流量，保护内部网络资源。</p>
+<h2 id="防火墙通常部署在哪里">防火墙通常部署在哪里？
+</h2><p>通常部署在内网与互联网之间、不同安全级别的内网区域之间（如DMZ区）、或关键服务器前端。</p>
+<h2 id="防火墙的基本技术有哪些">防火墙的基本技术有哪些？
+</h2><p>包过滤（静态/动态）、状态检测（连接跟踪）、应用层代理（深度包检测）。</p>
+<h2 id="包过滤防火墙检查什么信息">包过滤防火墙检查什么信息？
+</h2><p>检查数据包的源/目标IP地址、端口号、协议类型（TCP/UDP/ICMP）等网络层和传输层信息。</p>
+<p>中等难度</p>
+<h2 id="状态检测防火墙相比包过滤有何优势">状态检测防火墙相比包过滤有何优势？
+</h2><p>状态检测能跟踪连接状态（如TCP三次握手），理解会话上下文，从而更智能地允许或拒绝流量，防御伪装攻击。</p>
+<h2 id="什么是下一代防火墙ngfw">什么是下一代防火墙（NGFW）？
+</h2><p>NGFW在传统防火墙基础上集成了应用识别与控制、入侵防御（IPS）、用户身份管理、威胁情报等高级功能，提供更精细的防护。</p>
+<h2 id="什么是防火墙的默认拒绝策略">什么是防火墙的“默认拒绝”策略？
+</h2><p>指防火墙默认阻止所有未明确允许的流量，遵循最小权限原则，是更安全的配置策略。</p>
+<h2 id="防火墙如何处理nat网络地址转换">防火墙如何处理NAT（网络地址转换）？
+</h2><p>防火墙常集成NAT功能，将内部私有IP转换为公网IP对外通信，同时隐藏内网结构，节省公网地址。</p>
+<h2 id="如何验证防火墙规则的有效性">如何验证防火墙规则的有效性？
+</h2><p>通过规则日志分析、漏洞扫描、渗透测试、模拟攻击流量等方式，定期审计规则集是否达到预期效果。</p>
+<h1 id="上网行为管理">上网行为管理
+</h1><p>简单难度</p>
+<h2 id="什么是上网行为管理">什么是上网行为管理？
+</h2><p>指通过技术手段监控、记录、控制和审计组织内部人员的网络使用行为，以提升工作效率、保障安全和合规。</p>
+<h2 id="上网行为管理的主要目的">上网行为管理的主要目的？
+</h2><p>防止机密泄露、限制无关网络访问（如游戏、视频）、优化带宽使用、满足法律法规审计要求。</p>
+<h2 id="常见管理内容有哪些">常见管理内容有哪些？
+</h2><p>网站访问过滤、应用控制（如禁止P2P）、带宽分配、内容审计（邮件/即时通讯）、行为日志记录。</p>
+<h2 id="上网行为管理设备通常部署在哪里">上网行为管理设备通常部署在哪里？
+</h2><p>部署在内网出口位置，串联在防火墙与核心交换机之间，以监控所有用户上网流量。</p>
+<h2 id="黑白名单是什么">“黑白名单”是什么？
+</h2><p>白名单是只允许访问的网站/应用列表；黑名单是禁止访问的列表，是基础的访问控制策略。</p>
+<p>中等难度</p>
+<h2 id="如何基于用户身份实施策略">如何基于用户身份实施策略？
+</h2><p>通过对接认证系统（如AD/LDAP），将IP或MAC地址与用户身份绑定，实现基于用户/组的差异化控制。</p>
+<h2 id="流量识别技术有哪些">流量识别技术有哪些？
+</h2><p>包括端口识别、深度包检测（DPI）、行为特征分析、SSL解密等，以准确识别加密或伪装的应用。</p>
+<h2 id="如何实现带宽管理">如何实现带宽管理？
+</h2><p>通过QoS（服务质量）技术，设置优先级、保证带宽、限制最大带宽、分时段控制等，确保关键业务流畅。</p>
+<h2 id="行为审计的法律合规要点">行为审计的法律合规要点？
+</h2><p>在实施前需明确告知员工并获得同意（如签署协议），日志需安全存储并保护隐私，仅用于安全与合规目的。</p>
+<h2 id="如何应对加密流量如https的管理">如何应对加密流量（如HTTPS）的管理？
+</h2><p>采用SSL中间人解密技术，将流量解密后进行检查再重新加密，但需在终端安装受信根证书并注意隐私法律限制。</p>
+<h1 id="vpn-虚拟专用网">VPN (虚拟专用网)
+</h1><p>简单难度</p>
+<h2 id="什么是vpn">什么是VPN？
+</h2><p>VPN是通过加密隧道技术在公共网络（如互联网）上构建的逻辑专用网络，实现远程安全访问内网资源。</p>
+<h2 id="vpn的主要作用">VPN的主要作用？
+</h2><p>保证远程通信的机密性与完整性，让远程用户/分支机构像直接连接内网一样安全访问资源。</p>
+<h2 id="vpn常见类型有哪些">VPN常见类型有哪些？
+</h2><p>远程访问VPN（如员工接入）、站点到站点VPN（如分支机构互联）。</p>
+<h2 id="vpn常用的加密协议有哪些">VPN常用的加密协议有哪些？
+</h2><p>IPsec、SSL/TLS（如OpenVPN）、WireGuard等。</p>
+<h2 id="什么是vpn隧道">什么是VPN隧道？
+</h2><p>指通过封装和加密技术，在公共网络上建立的虚拟点对点安全数据传输通道。</p>
+<p>中等难度</p>
+<h2 id="ipsec-vpn工作模式有何区别">IPsec VPN工作模式有何区别？
+</h2><p>传输模式只加密有效载荷，用于端到端安全；隧道模式加密整个IP包并添加新IP头，常用于网关间互联。</p>
+<h2 id="ssl-vpn相比ipsec-vpn有何特点">SSL VPN相比IPsec VPN有何特点？
+</h2><p>SSL VPN基于标准HTTPS端口（443），无需专用客户端（可浏览器访问），更易穿越防火墙，适合远程用户灵活接入。</p>
+<h2 id="什么是零信任模型下的vpn演进">什么是“零信任”模型下的VPN演进？
+</h2><p>零信任强调持续验证、最小权限，VPN正与SDP（软件定义边界）、身份感知等结合，实现更细粒度的动态访问控制。</p>
+<h2 id="如何选择vpn部署模式云硬件软件">如何选择VPN部署模式（云/硬件/软件）？
+</h2><p>硬件VPN性能高适合大型站点；软件VPN灵活适合移动用户；云VPN服务易扩展但需评估供应商安全性与合规性。</p>
+<h2 id="vpn面临的常见攻击及防护措施">VPN面临的常见攻击及防护措施？
+</h2><p>包括中间人攻击（通过强认证与证书防护）、协议漏洞（及时更新补丁）、暴力破解（使用多因素认证）、日志泄露（加强日志保护）等。</p>
+
 </section>
 
 
